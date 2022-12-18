@@ -1,5 +1,11 @@
 from pytube import YouTube
 
-youtube = YouTube('https://www.youtube.com/watch?v=p4kVWCSzfK4&list=RDtPxSX2g_VMU&index=4')
+youtube = YouTube(input("URL: "))
 
-youtube.streams.get_highest_resolution().download()
+# destino para salvar o arquivo
+destination = 'D:\Downloads'
+
+# download do arquivo de melhor qualidade
+youtube.streams.get_highest_resolution().download(output_path=destination)
+
+print(f'{youtube.title} foi baixado com sucesso.')
